@@ -1,0 +1,44 @@
+{
+	"pages": [
+		{
+			"path": "pages/Login",
+			"style": {
+				"navigationBarTitleText": "登录",
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		},
+		{
+		"path": "pages/index/index",
+		"style": {
+			"navigationBarTitleText": "设置"
+		}
+		},
+		{
+		"path": "pages/my/index",
+		"style": {
+			"navigationBarTitleText": "我的"
+		}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#4596f3",
+		"backgroundColor": "#FFFFFF"
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#60da7f",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+			"pagePath": "pages/index/index",
+			"text": "首页"
+		}, {
+			"pagePath": "pages/my/index",
+			"text": "我的"
+		}]
+	}
+}
