@@ -119,7 +119,7 @@
 			updateSetting(){
 				requestsetSetting({
 					phone:this.userInfo.phone,
-					timeSolt:this.currentTimeSolt}).then(res=>{
+					timeSolt:this.currentTimeSolt?this.currentTimeSolt:'0800-0810'}).then(res=>{
 					this.setHint('设置成功')
 					setTimeout(()=>{
 						this.getSetting()
