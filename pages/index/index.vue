@@ -5,8 +5,12 @@
 			<text class="tip-text">* 进站码状态将在每日开放抢码的12点以及20点更新状态</text>
 			<view class="setting-box">
 				<view class="setting-item">
-					<view>站点：</view>
-					<view>沙河站</view>
+					<picker @change="bindPickerChangeStation" :value="indexStation" :range="arrayStation" style="width: 100%">
+						<view class="picker-setting">
+							<view>进站站点</view>
+							<view class="uni-input">{{currentStation?currentStation:'暂无'}}</view>
+						</view>
+					</picker>
 				</view>
 				<view class="setting-item">
 <!--					<view>8:00-8:10</view>-->
@@ -44,7 +48,7 @@
 		<view class="setting-title">修改设置：</view>
 		<view class="setting-handle">
 <!--			<button class="success-button" @click="getSetting">刷新设置</button>-->
-			<text class="tip-text">* 重新选择区间后需要点击修改按钮更新设置</text>
+			<text class="tip-text" v-show="showTag">* 重新选择区间后需要点击修改按钮更新设置</text>
 			<button class="primary-button" @click="updateSetting">修改/添加</button>
 <!--			<button class="danger-buttton" @click="deleteSetting">删除</button>-->
 			<uni-popup ref="popup" type="bottom">
@@ -67,9 +71,6 @@
 		data() {
 			return {
 				array: [
-						'06:30-06:40',
-						'06:40-06:50',
-						'06:50-07:00',
 						'07:00-07:10',
 						'07:10-07:20',
 						'07:20-07:30',
@@ -83,8 +84,16 @@
 						'08:40-08:50',
 						'08:50-09:00'
 				],
+				arrayStation:[
+						'沙河站',
+						'天通苑站',
+						'草房站'
+				],
 				index: 0,
+				showTag:false,
+				indexStation:0,
 				currentTimeSolt: null,
+				currentStation: null,
 				currentTimeSoltShow: null,
 				passCode:null,
 				codeData:[]
@@ -106,7 +115,8 @@
 			},
 			getSetting(){
 				requestSetting({phone:this.userInfo.phone}).then(res=>{
-					this.currentTimeSolt = res.info
+					// 分配站点以及时间
+					[this.currentStation, this.currentTimeSolt] = res.info.split('@@@')
 					this.currentTimeSoltShow = this.formatCodeData(this.currentTimeSolt)
 				})
 			},
@@ -115,11 +125,19 @@
 				this.index = e.target.value
 				this.currentTimeSoltShow = (this.array[this.index])
 				this.currentTimeSolt = (this.array[this.index]).replace(/:/g,'')
+				this.showTag = true
+			},
+			bindPickerChangeStation: function(e) {
+				this.index = e.target.value
+				this.currentStation = (this.arrayStation[this.index])
+				this.currentStation = (this.arrayStation[this.index])
+				this.showTag = true
 			},
 			updateSetting(){
 				requestsetSetting({
 					phone:this.userInfo.phone,
-					timeSolt:this.currentTimeSolt?this.currentTimeSolt:'0800-0810'}).then(res=>{
+					timeSolt:this.currentTimeSolt?this.currentTimeSolt:'0800-0810',
+					station:this.currentStation?this.currentStation:'沙河站'}).then(res=>{
 					this.setHint('设置成功')
 					setTimeout(()=>{
 						this.getSetting()

@@ -94,7 +94,7 @@ export default function getInstance(category) {
 	// 设置默认配置
 	minRequest.setConfig((config) => {
 		// config.baseURL = 'http://localhost:5000/' + category
-		config.baseURL = 'http://119.254.155.123:5001/' + category
+		config.baseURL = 'http://39.96.45.122:5000/' + category
 		return config
 	});
 	return minRequest
