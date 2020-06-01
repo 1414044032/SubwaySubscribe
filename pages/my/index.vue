@@ -32,16 +32,15 @@
                 let _self = this
                 uni.showModal({
                     title: '提示',
-                    content: '退出登录后将清除用户信息，不再抢预约码',
+                    content: '退出登录后将清除用户信息，并且不再自动抢码',
                     success: function (res) {
                         if (res.confirm) {
                             requestdelSetting({phone:_self.userInfo.phone}).then(res=>{
-                                _self.setHint(res.info)
                                 _self.removeTag()
                                 _self.setInfo(null)
                                 _self.setHint('清除用户信息成功')
                                 setTimeout(()=>{
-                                    _self.$openPage('Login')
+                                    _self.$Router.push({ name: 'login'})
                                 },2000)
                             })
                         } else if (res.cancel) {

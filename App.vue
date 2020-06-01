@@ -1,11 +1,8 @@
 <script>
-    import {
-        requestcheckLogin
-    } from '@/common/api/api'
 export default {
 	onLaunch: function() {
 		console.log('App Launch');
-		let tag = this.getTag()
+		/*let tag = this.getTag()
         if (tag){
             requestcheckLogin({phone:tag.phone}).then(res=>{
                 this.$openPage('Home')
@@ -15,7 +12,7 @@ export default {
         }else {
             this.setHint('用户未登录')
             this.$openPage('Login')
-        }
+        }*/
 	},
 	onShow: function() {
 		console.log('App Show');

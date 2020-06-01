@@ -121,7 +121,7 @@
                                         token:res.info
                                     })
                                     setTimeout(()=>{
-                                        this.$openPage('Home')
+                                        this.$Router.push({ name: 'home'})
                                     },2000)
                                 }
                             }

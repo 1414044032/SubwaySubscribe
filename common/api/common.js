@@ -9,3 +9,4 @@ export const requestdelSetting = (parms) => { return getInstance('delSetting').g
 export const requestcheckLogin = (parms) => { return getInstance('checkLogin').get('', parms)}
 export const requestcheckPassCode = (parms) => { return getInstance('checkPassCode').get('', parms)}
 export const requestcheckUserCount = (parms) => { return getInstance('checkUserCount').get('', parms)}
+export const requestGetCode = (parms) => { return getInstance('getCode').get('', parms)}

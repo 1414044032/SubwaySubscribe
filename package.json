@@ -1,0 +1,23 @@
+{
+  "name": "subwaysubscribe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1414044032/SubwaySubscribe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1414044032/SubwaySubscribe/issues"
+  },
+  "homepage": "https://github.com/1414044032/SubwaySubscribe#readme",
+  "dependencies": {
+    "qrcodejs2": "0.0.2",
+    "uni-simple-router": "^1.5.4"
+  }
+}

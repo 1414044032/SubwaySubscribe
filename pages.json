@@ -1,6 +1,12 @@
 {
 	"pages": [
 		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "设置"
+			}
+		},
+		{
 			"path": "pages/Login",
 			"style": {
 				"navigationBarTitleText": "登录",
@@ -10,15 +16,15 @@
 			}
 		},
 		{
-		"path": "pages/index/index",
-		"style": {
-			"navigationBarTitleText": "设置"
-		}
-		},
-		{
 		"path": "pages/my/index",
 		"style": {
 			"navigationBarTitleText": "我的"
+		}
+		},
+		{
+		"path": "pages/code/index",
+		"style": {
+			"navigationBarTitleText": "进站码"
 		}
 		}
 	],
@@ -37,8 +43,12 @@
 			"pagePath": "pages/index/index",
 			"text": "首页"
 		}, {
+			"pagePath": "pages/code/index",
+			"text": "进站码"
+		},{
 			"pagePath": "pages/my/index",
 			"text": "我的"
-		}]
+		}
+		]
 	}
 }

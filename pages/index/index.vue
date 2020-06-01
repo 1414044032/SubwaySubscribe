@@ -40,7 +40,7 @@
 				<view class="setting-item" v-if="passCode">
 					<view>进站码进入日期：</view>
 					<view :class="[passCode?'status-succcess':'status-error']">
-						{{codeData[2]+'-'+formatCodeData(codeData[3])}}</view>
+						{{codeData[5]+'-'+formatCodeData(codeData[9])}}</view>
 				</view>
 
 			</view>
