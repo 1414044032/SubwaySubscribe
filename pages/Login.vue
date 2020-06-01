@@ -36,6 +36,7 @@
             <uni-icons type="arrowdown" size="20"></uni-icons>
             <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzI4NjAyNTA2Ng==&scene=124#wechat_redirect">北京地铁预约出行官方公众号</a>
         </view>
+<!--        <button type="primary" @click="testRoute">登录</button>-->
     </view>
 </template>
 
@@ -64,6 +65,10 @@
             this.checkUserCount()
         },
         methods: {
+            testRoute(){
+              this.$Router.push({ path: '/pages/code/index', query: { phone: '' }})
+
+            },
             checkUserCount(){
                 requestcheckUserCount().then(res=>{
                     this.userAllInfo = res.info

@@ -6,28 +6,33 @@ const home = [
         name: 'home',
         meta: {
             title: '设置',
-        },
+        }
     },
     {
         path: '/pages/Login',
         name: 'login',
         meta: {
             title: '登录',
-        },
+        }
     },
+    // {
+    //     path: '/pages/code/index',
+    //     name: 'code',
+    //     meta: {
+    //         title: '进站码',
+    //     }
+    // },
     {
         path: '/pages/code/index',
         name: 'code',
-        meta: {
-            title: '进站码',
-        },
+        component: () => import('@/pages/code/index.vue')
     },
     {
         path: '/pages/my/index',
         name: 'my',
         meta: {
             title: '我的',
-        },
+        }
     }
 ]
 export default home

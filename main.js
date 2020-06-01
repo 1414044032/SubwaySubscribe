@@ -23,7 +23,8 @@ App.mpType = 'app'
 //全局路由前置守卫
 router.beforeEach((to, from, next) => {
     // 路由拦截 针对登录页以及扫码页 不拦截
-    if(to.name === 'login'){
+    console.log(to)
+    if(to.name === 'login' || to.name === 'code'){
         next()
     }else {
         let tag = uni.getStorageSync('glob_tag_001')
